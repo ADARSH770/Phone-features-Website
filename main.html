@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     *{
+         margin:0;
+         padding:0;
+         font-family: sans-serif;
+     }
+     .main{
+         height: 100vh;
+         width:100%;
+         position: relative;
+         overflow: hidden;
+         background: linear-gradient(#c21500,#ffc500);
+     }
+     nav{
+         width: 80%;
+         position: sticky;
+         z-index: 1;
+         display: flex;
+         align-items: center;
+         margin-left: 230px;
+     }
+     .logo{
+         flex-basis: 20%;
+     }
+     .logo img{
+         width: 150px;
+     }
+     .nav-link{
+         flex:1;
+         text-align:right;
+     }
+     .nav-link ul li{
+         list-style: none;
+         display: inline-block;
+         margin: 5px 20px;
+     }
+     .nav-link ul li a{
+         color:#fff;
+         text-decoration: none;
+         border: 45px;
+         border-radius: 25px;
+         padding: 5px;
+         font-size: 22px;
+         font-weight: 700;
+     }
+     .nav-link ul li a.hm{
+         background-color: #fff;
+         color: black;
+     }
+   
+     .nav-link ul li a:hover{
+         background-color:#fff;
+         color:#000;
+         transition:0.6s;
+         
+     }
+     .info{
+         width: 900px;
+         height: 900px;
+         position: absolute;
+         top: 50%;
+         left:-6%;
+         transform: translateY(-50%);
+     }
+     .over{
+         width: 0;
+         height: 0;
+         border-top: 500px solid #fff;
+         border-right: 500px solid red;
+         border-bottom: 500px solid #fff;
+         border-left: 500px solid #fff;
+         position: absolute;
+         top:0;
+         left: 0;
+     }
+     #circle{
+        width: 900px;
+         height: 900px;
+         position: absolute;
+         top:0%;
+         left:0%;
+         border-radius:50%;
+         transform: rotate(0deg);
+         transition: 1s;
+     }
+     .feature{
+         position: absolute;
+         color: #fff;
+     }
+     .feature img{
+         width: 70px;
+     }
+     .feature div{
+         margin-left: 30px;
+     }
+     .feature div p{
+         margin-top: 8px;
+     }
+     .one{
+         top:330px;
+         right:30px;
+     }
+     .two{
+         top:55px;
+         left:310px;
+         transform: rotate(-90deg);
+     }
+     .three{
+         top:450px;
+         left:20px;
+         transform: rotate(-180deg);
+     }
+     .four{
+         bottom:10px;
+         right:310px;
+         transform: rotate(-270deg);
+     }
+     .mobile{
+         width:200px;
+         position: absolute;
+         top:48%;
+         left:40%;
+         transform: translateY(-40%);
+         z-index: 1;
+     }
+     .controls{
+         position: absolute;
+         top:50%;
+         right:10%;
+         transform: translateY(-50%);
+         text-align: center;
+         
+     }
+     .controls h3{
+         margin:15px 0;
+         color:#fff;
+     }
+     #ubtn{
+           width: 15px;
+           cursor: pointer;
+     }
+     #dbtn{
+        width: 15px;
+       cursor: pointer;
+        transform: rotate(180deg);
+     }
+       .controls #ubtn:hover{
+         background-color:#000;
+         transition: 0.6s;
+     }
+     .controls #dbtn:hover{
+         background-color:#000;
+         transition: 0.6s;
+     }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+            <div class="nav-link">
+                <ul>
+                    <li ><a href=# class="hm">Home</a></li>
+                    <li><a href=#>About</a></li>
+                    <li><a href=#>Accessories</a></li>
+                    <li><a href=#>Cart</a></li>
+                </ul>
+
+            </div>
+        </nav>
+        <div class="info">
+            <div class="over">
+
+            </div>
+            <img src="mobile.png" class="mobile">
+            <div id="circle">
+            <div class="feature one">
+                <img src="camera.png">
+                <h1>Camera</h1>
+                <p>12 MP , wide angle</p>
+            </div>
+            <div class="feature two">
+                <img src="processor.png">
+                <h1>Processor</h1>
+                <p>sanpdragon octacore 850</p>
+            </div>
+            <div class="feature three">
+            <img src="display.png">
+            <h1>Display</h1>
+                <p>"6.5" Full hd display</p>
+        </div>
+            <div class="feature four">
+                <img src="battery.png">
+                <h1>Battery</h1>
+                <p>5000m mAh, 720 hrs standby</p>
+            </div>
+        </div>
+    </div>
+    <div class="controls">
+        <img src="arrow.png" id="ubtn">
+        <h3>Features</h3>
+        <img src="arrow.png" id="dbtn">
+    </div>
+</div>
+
+<script>
+    var circle = document.getElementById("circle");
+    var ubtn = document.getElementById("ubtn");
+    var dbtn = document.getElementById("dbtn");
+    var rotval = circle.style.transform;
+    var rotsum;
+
+    ubtn.onclick = function(){
+        rotsum = rotval + "rotate(-90deg)";
+        circle.style.transform = rotsum;
+        rotval = rotsum;
+    }
+    dbtn.onclick = function(){
+        rotsum = rotval + "rotate(90deg)";
+        circle.style.transform = rotsum;
+        rotval = rotsum;
+    }
+</script>
+</body>
+</html>
